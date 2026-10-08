@@ -1,0 +1,103 @@
+{
+  "status": "synthetic pilot; not a physical experiment or novelty demonstration",
+  "created_utc": "2026-10-08T04:35:14.052696+00:00",
+  "seed": 20261008,
+  "model": {
+    "plane_width_m": 2.0,
+    "plane_depth_m": 3.0,
+    "image_width_px": 1024,
+    "image_height_px": 768,
+    "focal_length_px": 800.0,
+    "look_at": [
+      0,
+      1.5,
+      0
+    ],
+    "floor_texture_px": [
+      600,
+      900
+    ],
+    "nominal_distance_m": 3,
+    "nominal_height_m": 1.6,
+    "nominal_target_side_px": 116.91475026315413
+  },
+  "counts": {
+    "baseline_configurations": 12,
+    "baseline_method_rows": 36,
+    "points_per_configuration": 441,
+    "viewpoint_conditions": 245,
+    "monte_carlo_samples": 1000
+  },
+  "baseline_mean_rmse_px": {
+    "affine_corner_fit": 14.765951773073775,
+    "projective": 3.0404454944489954e-13,
+    "uncorrected": 63.60712583765019
+  },
+  "baseline_mean_shape_rmse_px": {
+    "affine_corner_fit": 9.110473259031851,
+    "projective": 3.57651646517245e-13,
+    "uncorrected": 25.363960045170092
+  },
+  "baseline_max_outside_fraction": {
+    "affine_corner_fit": 0.0,
+    "projective": 0.0,
+    "uncorrected": 0.0
+  },
+  "monte_carlo_assumed_sigma_m": {
+    "distance": 0.05,
+    "height": 0.03,
+    "lateral": 0.02
+  },
+  "monte_carlo_rmse_px": {
+    "0.5": 0.8409584938397516,
+    "0.95": 1.8592498897810268
+  },
+  "monte_carlo_shape_rmse_px": {
+    "0.5": 0.4561286583687189,
+    "0.95": 1.0235014059777785
+  },
+  "local_sensitivity": [
+    {
+      "parameter": "distance",
+      "rms_pixels_per_m": 15.666775201096598
+    },
+    {
+      "parameter": "height",
+      "rms_pixels_per_m": 17.367103829848315
+    },
+    {
+      "parameter": "lateral",
+      "rms_pixels_per_m": 23.634047215859894
+    }
+  ],
+  "render_quality": [
+    {
+      "method": "uncorrected",
+      "mse": 11615.690787584515,
+      "psnr_db": 7.480353183790726,
+      "roi_pixels": 12769
+    },
+    {
+      "method": "affine_corner_fit",
+      "mse": 4157.889732946981,
+      "psnr_db": 11.942073931903183,
+      "roi_pixels": 12769
+    },
+    {
+      "method": "projective",
+      "mse": 175.43767457644816,
+      "psnr_db": 25.689574987266578,
+      "roi_pixels": 12769
+    }
+  ],
+  "independent_ray_plane_max_error_m": 1.6653345369377348e-15,
+  "software": {
+    "numpy": "2.5.3",
+    "opencv-python-headless": "5.0.0.93",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2"
+  },
+  "python": "3.12.14",
+  "script_sha256": "fd3c381a922f8b5ee0f1337dcbd571f3bed7be21b0d6352429fc6f8af0eac15b",
+  "elapsed_seconds": 1.5460664320000888
+}

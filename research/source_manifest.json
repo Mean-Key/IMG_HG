@@ -1,0 +1,72 @@
+[
+  {
+    "file": "nguyen-thesis.pdf",
+    "url": "https://raw.githubusercontent.com/mayanguyen/Senior_Thesis/master/Latex/My_sproj/Maya_THE_Sproj.pdf",
+    "sha256": "f3d99412db79ee589780d9da9a13d82367e6e27c9f5fc224507faf0a686ad5f2",
+    "retrieved_date_kst": "2026-10-08",
+    "provenance": "GitHub public source; mirrors and original author/official docs distinguished in literature notes"
+  },
+  {
+    "file": "nguyen-thesis.tex",
+    "url": "https://raw.githubusercontent.com/mayanguyen/Senior_Thesis/master/Latex/My_sproj/Maya_Sproj.tex",
+    "sha256": "46b0e872e7fd0fd777c7962bae751ad241eb5ed5ee6b76638467669e88b4bb9c",
+    "retrieved_date_kst": "2026-10-08",
+    "provenance": "GitHub public source; mirrors and original author/official docs distinguished in literature notes"
+  },
+  {
+    "file": "anamorphic-images.pdf",
+    "url": "https://raw.githubusercontent.com/mayanguyen/Senior_Thesis/master/Readings/Lit_Anamorphosis/Anamorph.pdf",
+    "sha256": "529bcaec1af5bf2ffaa687c2ce54a0014009351b827b3f20626b5ebb475c2e4e",
+    "retrieved_date_kst": "2026-10-08",
+    "provenance": "GitHub public source; mirrors and original author/official docs distinguished in literature notes"
+  },
+  {
+    "file": "dynamic-anamorphosis.pdf",
+    "url": "https://raw.githubusercontent.com/mayanguyen/Senior_Thesis/master/Readings/Lit_Anamorphosis/Dynamic_anamorphosis.pdf",
+    "sha256": "13703153b848354a9e4b2fd291e77ae5b56cdb895de13561a3ccbb3f6fe1d97f",
+    "retrieved_date_kst": "2026-10-08",
+    "provenance": "GitHub public source; mirrors and original author/official docs distinguished in literature notes"
+  },
+  {
+    "file": "perspective-anamorphosis-vision.pdf",
+    "url": "https://raw.githubusercontent.com/mayanguyen/Senior_Thesis/master/Readings/Lit_Anamorphosis/1986_Perspective_Anamorphosis_and_Vision.pdf",
+    "sha256": "38723238b0a1e66b1fec25d9a8d772b4e9047e4afe11a10e9b0643152c64c64e",
+    "retrieved_date_kst": "2026-10-08",
+    "provenance": "GitHub public source; mirrors and original author/official docs distinguished in literature notes"
+  },
+  {
+    "file": "opencv-homography-tutorial.markdown",
+    "url": "https://raw.githubusercontent.com/opencv/opencv/4.x/doc/tutorials/features2d/homography/homography.markdown",
+    "sha256": "8ed4939a44621ca64da6e271f567aadb629f8ba05f5756b62fb415b58203d075",
+    "retrieved_date_kst": "2026-10-08",
+    "provenance": "GitHub public source; mirrors and original author/official docs distinguished in literature notes"
+  },
+  {
+    "file": "opencv-calibration-tutorial.markdown",
+    "url": "https://raw.githubusercontent.com/opencv/opencv/4.x/doc/tutorials/calib3d/camera_calibration/camera_calibration.markdown",
+    "sha256": "8ecf11a9c533a115cbd154e2215515c452dd3433f978880e71bf02e5ab74cfb5",
+    "retrieved_date_kst": "2026-10-08",
+    "provenance": "GitHub public source; mirrors and original author/official docs distinguished in literature notes"
+  },
+  {
+    "file": "opencv-references.bib",
+    "url": "https://raw.githubusercontent.com/opencv/opencv/4.x/doc/opencv.bib",
+    "sha256": "4c8452636a269668354c109f4b81072e046a06d6c447b6eed65f3369a810d1b1",
+    "retrieved_date_kst": "2026-10-08",
+    "provenance": "GitHub public source; mirrors and original author/official docs distinguished in literature notes"
+  },
+  {
+    "file": "deep-homography-readme.md",
+    "url": "https://raw.githubusercontent.com/tynguyen/unsupervisedDeepHomographyRAL2018/master/README.md",
+    "sha256": "a37ebd886f934f768b13a76a1376f8eef9edaebcf57c20a419d8edffc2dae4ea",
+    "retrieved_date_kst": "2026-10-08",
+    "provenance": "GitHub public source; mirrors and original author/official docs distinguished in literature notes"
+  },
+  {
+    "file": "anamorphme-readme.md",
+    "url": "https://raw.githubusercontent.com/phillipkent/AnamorphMeIJ/master/README.md",
+    "sha256": "788853aeb21b3d16231d1ec2ba990ea7e2bef8b1d3036ca5aa57aef866583663",
+    "retrieved_date_kst": "2026-10-08",
+    "provenance": "GitHub public source; mirrors and original author/official docs distinguished in literature notes"
+  }
+]
