@@ -1,4 +1,3 @@
-import argparse
 from pathlib import Path
 import sys
 
@@ -12,47 +11,70 @@ from imghg.geometry import ground_quad_from_view
 from imghg.warp import warp_target_to_ground
 
 
-def parse_vec3(text):
-    values = [float(v) for v in text.split(",")]
-    if len(values) != 3:
-        raise argparse.ArgumentTypeError("Expected x,y,z")
-    return np.array(values, dtype=float)
+# -----------------------------------------------------------------------------
+# Phase 1 configuration
+# -----------------------------------------------------------------------------
+IMAGE_PATH = ROOT / "inputs" / "cone.png"
+OUTPUT_PATH = ROOT / "outputs" / "ground_cone.png"
+
+G1 = np.array([-0.30, 4.00, 0.00], dtype=float)
+G2 = np.array([0.30, 4.00, 0.00], dtype=float)
+CAMERA_CENTER = np.array([0.00, 0.00, 1.60], dtype=float)
+OBJECT_HEIGHT = 0.70
+PIXELS_PER_METER = 500.0
+PADDING_PX = 20
 
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--image", required=True)
-    parser.add_argument("--g1", type=parse_vec3, required=True)
-    parser.add_argument("--g2", type=parse_vec3, required=True)
-    parser.add_argument("--camera", type=parse_vec3, required=True)
-    parser.add_argument("--height", type=float, required=True)
-    parser.add_argument("--ppm", type=float, default=500.0)
-    parser.add_argument("--output", default="outputs/ground_image.png")
-    args = parser.parse_args()
-
-    image = cv2.imread(args.image, cv2.IMREAD_UNCHANGED)
+    image = cv2.imread(str(IMAGE_PATH), cv2.IMREAD_UNCHANGED)
     if image is None:
-        raise FileNotFoundError(args.image)
+        raise FileNotFoundError(
+            f"Target image not found: {IMAGE_PATH}\n"
+            "Place a PNG image at inputs/cone.png."
+        )
 
     quad, (h1, h2), (p1, p2) = ground_quad_from_view(
-        args.g1, args.g2, args.camera, args.height
+        G1,
+        G2,
+        CAMERA_CENTER,
+        OBJECT_HEIGHT,
     )
-    warped, homography, metadata = warp_target_to_ground(image, quad, args.ppm)
 
-    output = Path(args.output)
-    output.parent.mkdir(parents=True, exist_ok=True)
-    cv2.imwrite(str(output), warped)
+    ground_image, homography, metadata = warp_target_to_ground(
+        image,
+        quad,
+        pixels_per_meter=PIXELS_PER_METER,
+        padding_px=PADDING_PX,
+    )
 
-    print(f"G1: {args.g1}")
-    print(f"G2: {args.g2}")
-    print(f"H1: {h1}")
-    print(f"H2: {h2}")
-    print(f"P1: {p1}")
-    print(f"P2: {p2}")
-    print("Ground quad order: G1, G2, P2, P1")
-    print(f"Output: {output}")
-    print(f"Origin XY: {metadata['origin_xy']}")
-    print(f"Homography:\n{homography}")
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    if not cv2.imwrite(str(OUTPUT_PATH), ground_image):
+        raise RuntimeError(f"Failed to save: {OUTPUT_PATH}")
+
+    print("\n=== Phase 1: Ground Image Generation ===")
+    print(f"G1 = {G1}")
+    print(f"G2 = {G2}")
+    print(f"H1 = {h1}")
+    print(f"H2 = {h2}")
+    print(f"P1 = {p1}")
+    print(f"P2 = {p2}")
+
+    print("\nGround quad order:")
+    print("[G1, G2, P2, P1]")
+    print(quad)
+
+    print("\nDestination quad [px]:")
+    print(metadata["dst_quad_px"])
+
+    print("\nHomography:")
+    print(homography)
+
+    print("\nOutput size:")
+    print(metadata["output_size"])
+
+    print("\nSaved:")
+    print(OUTPUT_PATH)
 
 
 if __name__ == "__main__":
