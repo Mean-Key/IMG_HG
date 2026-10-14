@@ -1,0 +1,16 @@
+[project]
+name = "imghg"
+version = "0.1.0"
+description = "View-dependent ground image generation"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.26",
+    "opencv-python>=4.10",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
